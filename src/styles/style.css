@@ -1,7 +1,6 @@
 header {
   background-color: #4c8bf5;
-  width: 100%;
-  padding: 0 1rem;
+  padding: 1rem;
 }
 #mobile--menu {
   display: flex;
@@ -9,8 +8,11 @@ header {
 }
 .header-menu--button {
   align-self: center;
+  background-color: white;
+  border: none;
   padding: 0.5rem;
-  height: 10%;
+  height: 5%;
+  width: 15%;
 }
 #header--logo {
   height: 4rem;
