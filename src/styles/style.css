@@ -1,0 +1,17 @@
+header {
+  background-color: #4c8bf5;
+  width: 100%;
+  padding: 0 1rem;
+}
+#mobile--menu {
+  display: flex;
+  justify-content: space-between;
+}
+.header-menu--button {
+  align-self: center;
+  padding: 0.5rem;
+  height: 10%;
+}
+#header--logo {
+  height: 4rem;
+}
