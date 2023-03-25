@@ -29,17 +29,3 @@ export async function fetchUpcomingMovies() {
 
   return parsed;
 }
-
-export async function fetchAllhomeMovies() {
-  try {
-    const [response1, response2, response3] = await Promise.all([
-      fetchPopularMovies(),
-      fetchTopRatedMovies(),
-      fetchUpcomingMovies(),
-    ]);
-    return [response1, response2, response3];
-  } catch (error) {
-    console.log("🚀 ~ file: utils.js:42 ~ fetchAllhomeMovies ~ error:", error);
-    alert("Can not fetch movies right now");
-  }
-}

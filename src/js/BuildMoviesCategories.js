@@ -5,9 +5,7 @@ export default class BuildMoviesCategories {
     this.maxMoviesToShow = maxMoviesToShow;
   }
 
-  async buildInterface() {
-    const movies = await this.fetchMovieService();
-
+  buildMovieCategory(movies) {
     for (let index = 0; index < this.maxMoviesToShow; index++) {
       // Building HTML elements
       const movieContainer = document.createElement("div");
@@ -45,6 +43,18 @@ export default class BuildMoviesCategories {
       movieContainer.appendChild(moreInfoButton);
 
       this.container.appendChild(movieContainer);
+    }
+  }
+  async buildInterface() {
+    try {
+      const movies = await this.fetchMovieService();
+
+      this.buildMovieCategory(movies);
+    } catch (error) {
+      console.log(
+        "🚀 ~ file: BuildMoviesCategories.js:54 ~ BuildMoviesCategories ~ buildInterface ~ error:",
+        error
+      );
     }
   }
 }
