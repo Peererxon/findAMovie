@@ -8,6 +8,7 @@ export default class BuildMoviesCategories {
   buildMovieCategory(movies) {
     for (let index = 0; index < this.maxMoviesToShow; index++) {
       // Building HTML elements
+      const linkToMovieInfoButton = document.createElement("a");
       const movieContainer = document.createElement("div");
       const poster = document.createElement("img");
       const title = document.createElement("h2");
@@ -17,6 +18,7 @@ export default class BuildMoviesCategories {
       const addToWatchLater = document.createElement("button");
       const moreInfoButton = document.createElement("button");
 
+      // Set attributes, text content or inner text
       poster.setAttribute(
         "src",
         `https://image.tmdb.org/t/p/w500/${movies.results[index].poster_path}`
@@ -30,6 +32,11 @@ export default class BuildMoviesCategories {
       voteAverage.innerText = movies.results[index].vote_average;
 
       addToWatchLater.innerText = "Watch Later";
+
+      linkToMovieInfoButton.setAttribute(
+        "href",
+        `/info/index.html?movieid=${movies.results[index].id}`
+      );
 
       moreInfoButton.innerText = "More info";
 
@@ -50,6 +57,8 @@ export default class BuildMoviesCategories {
       movieContainer.appendChild(title);
       movieContainer.appendChild(addToWatchLater);
       movieContainer.appendChild(moreInfoButton);
+      linkToMovieInfoButton.appendChild(moreInfoButton);
+      movieContainer.appendChild(linkToMovieInfoButton);
 
       this.container.appendChild(movieContainer);
     }
