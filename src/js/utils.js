@@ -29,3 +29,13 @@ export async function fetchUpcomingMovies() {
 
   return parsed;
 }
+
+export async function fetchMovieInfo(movieId) {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en-US&page=1`
+  );
+
+  const parsed = await response.json();
+
+  return parsed;
+}
