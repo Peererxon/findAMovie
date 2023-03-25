@@ -1,15 +1,14 @@
-import { fetchPopularMovies } from "./utils";
-
-export class BuildMoviesCategories {
-  constructor(container, fetchMovieService) {
+export default class BuildMoviesCategories {
+  constructor(container, fetchMovieService, maxMoviesToShow) {
     this.container = container;
     this.fetchMovieService = fetchMovieService;
+    this.maxMoviesToShow = maxMoviesToShow;
   }
 
   async buildInterface() {
     const movies = await this.fetchMovieService();
 
-    for (let index = 0; index < 2; index++) {
+    for (let index = 0; index < this.maxMoviesToShow; index++) {
       // Building HTML elements
       const movieContainer = document.createElement("div");
       const poster = document.createElement("img");
@@ -49,12 +48,3 @@ export class BuildMoviesCategories {
     }
   }
 }
-
-const moviesContainer = document.querySelector("#movies-container");
-
-const buildMoviesCategories = new BuildMoviesCategories(
-  moviesContainer,
-  fetchPopularMovies
-);
-
-buildMoviesCategories.buildInterface();
