@@ -17,6 +17,12 @@ header {
 #header--logo {
   height: 4rem;
 }
+#container {
+  margin: 0 1rem;
+}
+.movie-section h1 {
+  text-align: center;
+}
 .movie {
   display: flex;
   border: 5px solid black;
@@ -24,10 +30,18 @@ header {
   flex-direction: column;
   text-align: center;
   margin-bottom: 1rem;
+  padding-top: 1rem;
 }
 .movie--poster {
   align-self: center;
   width: 50%;
+}
+.movie--vote-average {
+  display: flex;
+  justify-content: center;
+}
+.movie--vote-average-div {
+  align-self: center;
 }
 .movie--button {
   align-self: center;

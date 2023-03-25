@@ -11,6 +11,8 @@ export default class BuildMoviesCategories {
       const movieContainer = document.createElement("div");
       const poster = document.createElement("img");
       const title = document.createElement("h2");
+      const voteAverageContainer = document.createElement("div");
+      const voteAverageDiv = document.createElement("div");
       const voteAverage = document.createElement("p");
       const addToWatchLater = document.createElement("button");
       const moreInfoButton = document.createElement("button");
@@ -22,6 +24,9 @@ export default class BuildMoviesCategories {
 
       title.textContent = movies.results[index].title;
 
+      voteAverageDiv.innerHTML =
+        '<span class="material-symbols-outlined">star</span>';
+
       voteAverage.innerText = movies.results[index].vote_average;
 
       addToWatchLater.innerText = "Watch Later";
@@ -32,12 +37,16 @@ export default class BuildMoviesCategories {
 
       movieContainer.classList.add("movie");
       poster.classList.add("movie--poster");
+      voteAverageContainer.classList.add("movie--vote-average");
+      voteAverageDiv.classList.add("movie--vote-average-div");
       addToWatchLater.classList.add("movie--button");
       moreInfoButton.classList.add("movie--button");
 
       // Append HTML elements
       movieContainer.appendChild(poster);
-      movieContainer.appendChild(voteAverage);
+      voteAverageContainer.appendChild(voteAverageDiv);
+      voteAverageContainer.appendChild(voteAverage);
+      movieContainer.appendChild(voteAverageContainer);
       movieContainer.appendChild(title);
       movieContainer.appendChild(addToWatchLater);
       movieContainer.appendChild(moreInfoButton);
