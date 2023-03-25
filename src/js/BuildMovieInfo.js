@@ -1,3 +1,4 @@
+import LocalStorage from "./LocalstorageService";
 export default class BuildMovieInfo {
   constructor(container, fetchMovieService, movieId) {
     this.container = container;
@@ -54,6 +55,11 @@ export default class BuildMovieInfo {
       voteAverageContainer.classList.add("movie--vote-average");
       voteAverageDiv.classList.add("movie--vote-average-div");
       addToWatchLater.classList.add("movie--button");
+
+      // Set events
+      addToWatchLater.addEventListener("click", () => {
+        LocalStorage.setItem(movie.id);
+      });
 
       // Append HTML elements
       movieContainer.appendChild(poster);
