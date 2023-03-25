@@ -1,11 +1,11 @@
 import BuildMoviesCategories from "./BuildMoviesCategories";
-import { fetchPopularMovies } from "./utils";
+import { fetchAllhomeMovies } from "./utils";
 
 const moviesContainer = document.querySelector("#movies-container");
 
 const buildMoviesCategories = new BuildMoviesCategories(
   moviesContainer,
-  fetchPopularMovies,
+  fetchAllhomeMovies,
   5
 );
 
