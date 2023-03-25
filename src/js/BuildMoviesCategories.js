@@ -14,8 +14,9 @@ export class BuildMoviesCategories {
       const movieContainer = document.createElement("div");
       const poster = document.createElement("img");
       const title = document.createElement("h2");
-      const overview = document.createElement("p");
-      const releaseDate = document.createElement("p");
+      const voteAverage = document.createElement("p");
+      const addToWatchLater = document.createElement("button");
+      const moreInfoButton = document.createElement("button");
 
       poster.setAttribute(
         "src",
@@ -24,19 +25,25 @@ export class BuildMoviesCategories {
 
       title.textContent = movies.results[index].title;
 
-      overview.innerText = movies.results[index].overview;
+      voteAverage.innerText = movies.results[index].vote_average;
 
-      releaseDate.innerText = `Release date: ${movies.results[index].release_date}`;
+      addToWatchLater.innerText = "Watch Later";
+
+      moreInfoButton.innerText = "More info";
 
       // Adding classes
 
       movieContainer.classList.add("movie");
+      poster.classList.add("movie--poster");
+      addToWatchLater.classList.add("movie--button");
+      moreInfoButton.classList.add("movie--button");
 
       // Append HTML elements
       movieContainer.appendChild(poster);
+      movieContainer.appendChild(voteAverage);
       movieContainer.appendChild(title);
-      movieContainer.appendChild(overview);
-      movieContainer.appendChild(releaseDate);
+      movieContainer.appendChild(addToWatchLater);
+      movieContainer.appendChild(moreInfoButton);
 
       this.container.appendChild(movieContainer);
     }
