@@ -58,7 +58,7 @@ export default class BuildMovieInfo {
 
       // Set events
       addToWatchLater.addEventListener("click", () => {
-        LocalStorage.setItem(movie.id);
+        LocalStorage.setItem(movie);
       });
 
       // Append HTML elements
