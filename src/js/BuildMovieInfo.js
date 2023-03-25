@@ -9,6 +9,8 @@ export default class BuildMovieInfo {
     try {
       const movie = await this.fetchMovieService(this.movieId);
 
+      document.querySelector("#movie-name").textContent = movie.title;
+
       // Building HTML elements
       const movieContainer = document.createElement("div");
       const poster = document.createElement("img");
