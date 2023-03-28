@@ -39,3 +39,15 @@ export async function fetchMovieInfo(movieId) {
 
   return parsed;
 }
+
+export async function searchMovies(title) {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${encodeURI(
+      title
+    )}`
+  );
+
+  const parsed = await response.json();
+
+  return parsed;
+}
