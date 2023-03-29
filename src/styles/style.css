@@ -2,6 +2,25 @@ header {
   background-color: #4c8bf5;
   padding: 1rem;
 }
+#hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  padding: 1rem;
+  width: 60%;
+  z-index: 100;
+}
+#close-crosshair {
+  align-self: flex-end;
+  cursor: pointer;
+}
+.hidden {
+  display: none !important;
+}
 #mobile--menu {
   display: flex;
   justify-content: space-between;
