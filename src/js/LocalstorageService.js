@@ -23,14 +23,13 @@ export default class LocalStorage {
       alert(`"${title}" added to watch later`);
     }
   }
-  // TODO: test the bellow function
   static removeItem(id) {
     const items = this.getItems();
 
     if (items) {
-      items.filter((movie) => movie.id === id);
+      const filteredItems = items.filter((movie) => movie.id.toString() !== id);
 
-      localStorage.setItem("favorite-movies", JSON.stringify(items));
+      localStorage.setItem("favorite-movies", JSON.stringify(filteredItems));
     }
   }
   static checkIfExists(id) {

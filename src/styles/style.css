@@ -76,3 +76,31 @@ header {
 #movie-name {
   text-align: center;
 }
+
+#watch-later-movies {
+  border-collapse: collapse;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+#watch-later-movies td,
+#watch-later-movies th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#watch-later-movies tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#watch-later-movies tr:hover {
+  background-color: #ddd;
+}
+
+#watch-later-movies th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4c8bf5;
+  color: white;
+}
