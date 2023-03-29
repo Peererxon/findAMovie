@@ -11,15 +11,15 @@ export default class LocalStorage {
 
       // it only adds the given movie if it not exists
       if (!match) {
-        items.push(id);
+        items.push({ id, title });
 
         localStorage.setItem("favorite-movies", JSON.stringify(items));
         alert(`"${title}" added to watch later`);
       } else {
-        alert(`"${title}" already is in watch later`);
+        alert(`"${title}" is already in watch later`);
       }
     } else {
-      localStorage.setItem("favorite-movies", JSON.stringify([id]));
+      localStorage.setItem("favorite-movies", JSON.stringify([{ id, title }]));
       alert(`"${title}" added to watch later`);
     }
   }
@@ -28,7 +28,7 @@ export default class LocalStorage {
     const items = this.getItems();
 
     if (items) {
-      items.filter((itemId) => itemId === id);
+      items.filter((movie) => movie.id === id);
 
       localStorage.setItem("favorite-movies", JSON.stringify(items));
     }
@@ -37,7 +37,7 @@ export default class LocalStorage {
     const items = this.getItems();
 
     if (items) {
-      const match = items.find((movieId) => movieId === id);
+      const match = items.find((movie) => movie.id === id);
 
       if (match) {
         return true;
