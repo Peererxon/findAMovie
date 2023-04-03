@@ -38,6 +38,10 @@ header {
   display: flex;
   gap: 0.3rem;
 }
+#auth-links {
+  display: flex;
+  gap: 0.3rem;
+}
 #watch-later-container a {
   align-self: center;
   color: black;
