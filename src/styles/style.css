@@ -3,9 +3,11 @@ header {
   padding: 1rem;
 }
 #hamburger-menu {
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   background-color: white;
+  gap: 1rem;
   height: 100%;
   top: 0;
   left: 0;
@@ -24,6 +26,22 @@ header {
 #mobile--menu {
   display: flex;
   justify-content: space-between;
+}
+#hamburger-menu--input {
+  padding: 6px;
+}
+#search-movie-form {
+  display: flex;
+  flex-direction: row;
+}
+#watch-later-container {
+  display: flex;
+  gap: 0.3rem;
+}
+#watch-later-container a {
+  align-self: center;
+  color: black;
+  text-decoration: none;
 }
 .header-menu--button {
   align-self: center;
