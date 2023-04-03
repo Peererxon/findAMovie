@@ -1,3 +1,4 @@
+import AuthService from "./AuthService";
 export default class LocalStorage {
   static getItems() {
     const items = localStorage.getItem("favorite-movies");
@@ -6,12 +7,14 @@ export default class LocalStorage {
   static setItem({ id, title }) {
     const items = this.getItems();
 
+    const user = AuthService.getUserSession();
+
     if (items) {
       const match = this.checkIfExists(id);
 
       // it only adds the given movie if it not exists
       if (!match) {
-        items.push({ id, title });
+        items.push({ userId: user.uuid, id, title });
 
         localStorage.setItem("favorite-movies", JSON.stringify(items));
         alert(`"${title}" added to watch later`);
@@ -19,7 +22,10 @@ export default class LocalStorage {
         alert(`"${title}" is already in watch later`);
       }
     } else {
-      localStorage.setItem("favorite-movies", JSON.stringify([{ id, title }]));
+      localStorage.setItem(
+        "favorite-movies",
+        JSON.stringify([{ userId: user.uuid, id, title }])
+      );
       alert(`"${title}" added to watch later`);
     }
   }

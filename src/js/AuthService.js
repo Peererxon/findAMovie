@@ -71,12 +71,16 @@ export default class AuthService {
 
     localStorage.setItem(
       "session",
-      JSON.stringify({ logged: true, id: user.id, email: user.email })
+      JSON.stringify({ logged: true, uuid: user.uuid, email: user.email })
     );
 
     alert("Logged");
   }
 
+  static getUserSession() {
+    const parsed = JSON.parse(localStorage.getItem("session"));
+    return parsed;
+  }
   // This method protects actions in the app
   static canDoAction() {
     const isLogged = localStorage.getItem("session");
