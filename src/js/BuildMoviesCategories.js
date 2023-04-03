@@ -1,3 +1,4 @@
+import AuthService from "./AuthService";
 import LocalStorage from "./LocalstorageService";
 export default class BuildMoviesCategories {
   constructor(container, fetchMovieService, maxMoviesToShow) {
@@ -52,7 +53,11 @@ export default class BuildMoviesCategories {
 
       // Set events
       addToWatchLater.addEventListener("click", () => {
-        LocalStorage.setItem(movies.results[index]);
+        const canDoAction = AuthService.canDoAction();
+
+        if (canDoAction) {
+          LocalStorage.setItem(movies.results[index]);
+        }
       });
 
       // Append HTML elements

@@ -76,4 +76,15 @@ export default class AuthService {
 
     alert("Logged");
   }
+
+  // This method protects actions in the app
+  static canDoAction() {
+    const isLogged = localStorage.getItem("session");
+
+    if (!isLogged) {
+      alert("You have to login to perfom this action");
+      return false;
+    }
+    return true;
+  }
 }
