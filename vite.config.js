@@ -12,6 +12,8 @@ export default defineConfig({
         info: resolve(__dirname, "src/info/index.html"),
         search: resolve(__dirname, "src/search/index.html"),
         watchLater: resolve(__dirname, "src/user/watch-later/index.html"),
+        login: resolve(__dirname, "src/auth/login.html"),
+        register: resolve(__dirname, "src/auth/register.html"),
       },
     },
   },
