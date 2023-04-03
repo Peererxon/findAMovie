@@ -122,3 +122,23 @@ header {
   background-color: #4c8bf5;
   color: white;
 }
+.auth-form--h1 {
+  text-align: center;
+}
+.auth-form--from-group input {
+  font-size: 25px;
+}
+.auth-form--from-group {
+  display: flex;
+  margin-bottom: 1rem;
+  flex-direction: column;
+}
+#auth-form--button {
+  border: 1px solid white;
+  border-radius: 10px;
+  background: #4c8bf5;
+  color: white;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 7rem;
+}

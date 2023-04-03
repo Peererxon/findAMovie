@@ -49,19 +49,21 @@
         </div>
       </div>
     </header>
-    <h1>login</h1>
     <div id="container">
-      <form action="#" method="post" id="singupForm">
-        <div>
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
-        </div>
-        <div>
-          <label for="">password</label>
-          <input type="password" name="password" id="password" />
-        </div>
-        <button type="submit">Login</button>
-      </form>
+      <div>
+        <h1 class="auth-form--h1">Login</h1>
+        <form action="#" method="post" id="singupForm">
+          <div class="auth-form--from-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div class="auth-form--from-group">
+            <label for="">Password</label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <button type="submit" id="auth-form--button">Login</button>
+        </form>
+      </div>
     </div>
     <script src="../js/hamburgerMenu.js" type="module"></script>
     <script src="../js/login.js" type="module"></script>
