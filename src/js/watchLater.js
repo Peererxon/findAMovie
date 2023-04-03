@@ -1,11 +1,16 @@
 import LocalStorage from "./LocalstorageService";
+import AuthService from "./AuthService";
 
 const movies = LocalStorage.getItems();
 
-if (movies && movies.length > 0) {
+const user = AuthService.getUserSession();
+
+const userMovies = movies.filter((movie) => movie.userId === user.uuid);
+
+if (userMovies && userMovies.length > 0) {
   const table = document.querySelector("#watch-later-movies");
 
-  movies.forEach((movie) => {
+  userMovies.forEach((movie) => {
     const tr = document.createElement("tr");
     const watchLaterMovie = `<td>${movie.title}</td>
         <td>
