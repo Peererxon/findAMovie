@@ -33,7 +33,9 @@ export default class AuthService {
 
     localStorage.setItem("users", JSON.stringify(users));
 
-    alert(`si existen usuarios, pero el email no esta registrado`);
+    alert(`Account created!`);
+
+    window.location.href = "/";
   }
   static checkIfExists(email) {
     const users = this.getUsers();
@@ -75,6 +77,8 @@ export default class AuthService {
     );
 
     alert("Logged");
+
+    window.location.href = "/";
   }
 
   static getUserSession() {
