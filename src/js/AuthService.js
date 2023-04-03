@@ -50,4 +50,30 @@ export default class AuthService {
       return false;
     }
   }
+  static login({ email, password }) {
+    const users = this.getUsers();
+
+    // This if is for when the user doesn't exist
+    if (!users) {
+      alert("The credentials do not match our records!");
+      return;
+    }
+
+    const user = users.find(
+      (user) => user.email === email && user.password === password
+    );
+
+    // This is for when user does not exist
+    if (user === undefined) {
+      alert("The credentials do not match our records!");
+      return;
+    }
+
+    localStorage.setItem(
+      "session",
+      JSON.stringify({ logged: true, id: user.id, email: user.email })
+    );
+
+    alert("Logged");
+  }
 }
