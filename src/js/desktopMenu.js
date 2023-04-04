@@ -2,6 +2,8 @@ import AuthService from "./AuthService";
 
 const logoutButton = document.querySelector("#logout-desktop");
 
-logoutButton.addEventListener("click", () => {
-  AuthService.logout();
-});
+if (logoutButton) {
+  logoutButton.addEventListener("click", () => {
+    AuthService.logout();
+  });
+}
