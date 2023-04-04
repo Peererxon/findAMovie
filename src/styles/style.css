@@ -146,6 +146,12 @@ header {
   padding: 0.5rem;
   width: 7rem;
 }
+footer {
+  background-color: #4c8bf5;
+  color: black;
+  text-align: center;
+  padding: 1rem 0;
+}
 @media only screen and (min-width: 768px) {
   /* For desktop: */
   #movies-container,
@@ -164,5 +170,14 @@ header {
     display: grid;
     grid-template-columns: repeat(4, auto);
     gap: 1rem;
+  }
+  footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  footer div,
+  h2,
+  small {
+    align-self: center;
   }
 }
