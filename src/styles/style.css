@@ -30,6 +30,9 @@ header {
 #hamburger-menu--input {
   padding: 6px;
 }
+#hamburger-menu--input-desktop {
+  padding: 6px;
+}
 #search-movie-form {
   display: flex;
   flex-direction: row;
