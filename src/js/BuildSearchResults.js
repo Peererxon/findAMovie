@@ -20,10 +20,14 @@ export default class BuildSearchResults {
       const moreInfoButton = document.createElement("button");
 
       // Set attributes, text content or inner text
-      poster.setAttribute(
-        "src",
-        `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-      );
+      if (movie.poster_path) {
+        poster.setAttribute(
+          "src",
+          `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+        );
+      } else {
+        poster.setAttribute("src", `/noposter.webp`);
+      }
 
       title.textContent = movie.title;
 
