@@ -156,3 +156,13 @@ header {
     gap: 1rem;
   }
 }
+@media only screen and (min-width: 1024px) {
+  /* For desktop: */
+  #movies-container,
+  #top-rated-movies-container,
+  #upcoming-movies-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
+  }
+}
