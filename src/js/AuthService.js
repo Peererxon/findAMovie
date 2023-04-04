@@ -80,7 +80,11 @@ export default class AuthService {
 
     window.location.href = "/";
   }
+  static logout() {
+    localStorage.removeItem("session");
 
+    window.location.href = "/";
+  }
   static getUserSession() {
     const parsed = JSON.parse(localStorage.getItem("session"));
     return parsed;
