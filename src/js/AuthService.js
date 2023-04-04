@@ -15,7 +15,11 @@ export default class AuthService {
         "users",
         JSON.stringify([{ uuid, email, password }])
       );
-      alert(`Not users found`);
+      alert(`Account created`);
+
+      this.login({ email, password });
+
+      window.location.href = "/";
       return;
     }
 
@@ -34,6 +38,8 @@ export default class AuthService {
     localStorage.setItem("users", JSON.stringify(users));
 
     alert(`Account created!`);
+
+    this.login({ email, password });
 
     window.location.href = "/";
   }
