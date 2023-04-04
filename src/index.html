@@ -19,6 +19,37 @@
         <a href="./index.html">
           <img src="logo-site.png" alt="logo" id="header--logo" />
         </a>
+        <div id="desktop-menu">
+          <form
+            action="search/index.html"
+            method="get"
+            id="search-movie-form-desktop"
+          >
+            <input
+              id="hamburger-menu--input"
+              type="text"
+              placeholder="Find a movie"
+              name="title"
+            />
+            <button type="submit">
+              <span class="material-symbols-outlined"> search </span>
+            </button>
+          </form>
+          <div class="menu-desktop-item hidden">
+            <span class="material-symbols-outlined"> movie </span>
+            <a href="user/watch-later/index.html">My watch later list</a>
+          </div>
+          <div class="menu-desktop-item">
+            <a href="auth/login.html">Login</a>
+          </div>
+          <div class="menu-desktop-item">
+            <a href="auth/register.html">Sign up</a>
+          </div>
+          <div class="menu-desktop-item hidden">
+            <span class="material-symbols-outlined"> logout </span>
+            <a href="auth/register.html">Logout</a>
+          </div>
+        </div>
         <button class="header-menu--button" id="hamburgerButton">
           <span class="material-symbols-outlined"> menu </span>
         </button>
