@@ -146,3 +146,13 @@ header {
   padding: 0.5rem;
   width: 7rem;
 }
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  #movies-container,
+  #top-rated-movies-container,
+  #upcoming-movies-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
