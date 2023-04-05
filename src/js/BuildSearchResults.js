@@ -1,4 +1,5 @@
 import LocalStorage from "./LocalstorageService";
+import AuthService from "./AuthService";
 
 export default class BuildSearchResults {
   constructor(container, fetchMovieService) {
@@ -56,7 +57,11 @@ export default class BuildSearchResults {
 
       // Set events
       addToWatchLater.addEventListener("click", () => {
-        LocalStorage.setItem(movie);
+        const canDoAction = AuthService.canDoAction();
+
+        if (canDoAction) {
+          LocalStorage.setItem(movie);
+        }
       });
 
       // Append HTML elements

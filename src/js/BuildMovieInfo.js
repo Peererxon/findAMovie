@@ -1,3 +1,4 @@
+import AuthService from "./AuthService";
 import LocalStorage from "./LocalstorageService";
 export default class BuildMovieInfo {
   constructor(container, fetchMovieService, movieId) {
@@ -58,7 +59,10 @@ export default class BuildMovieInfo {
 
       // Set events
       addToWatchLater.addEventListener("click", () => {
-        LocalStorage.setItem(movie);
+        const canDoAction = AuthService.canDoAction();
+        if (canDoAction) {
+          LocalStorage.setItem(movie);
+        }
       });
 
       // Append HTML elements
