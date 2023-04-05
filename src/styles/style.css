@@ -108,7 +108,9 @@ header {
   margin-top: 1rem;
   width: 100%;
 }
-
+#user-info-table {
+  height: 80vh;
+}
 #watch-later-movies td,
 #watch-later-movies th {
   border: 1px solid #ddd;
