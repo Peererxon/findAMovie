@@ -173,6 +173,9 @@ footer {
   max-width: 50%;
   margin: 0 auto;
 }
+.vh-height {
+  height: 90vh;
+}
 @media only screen and (min-width: 768px) {
   /* For desktop: */
   #movies-container,
